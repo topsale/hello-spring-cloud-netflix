@@ -1,0 +1,30 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: addons-hystrix-turbine
+
+server:
+  port: 8847
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+
+turbine:
+  # 可以让同一主机上的服务通过主机名与端口号的组合来进行区分
+  # 默认情况下会以 HOST 来区分不同的服务，这会使得在本机调试的时候，本机上的不同服务聚合成一个服务来统计
+  combine-host-port: true
+  # 配置监控服务的列表，表明监控哪些服务多个使用 "," 分割
+  app-config: business-admin
+  # 用于指定集群名称，当服务数量非常多的时候，可以启动多个
+  cluster-name-expression: metadata['cluster']
+  aggregator:
+    # 指定聚合哪些集群，多个使用 "," 分割，默认为 default
+    cluster-config: business
+  # 用于替换源码 org.springframework.cloud.netflix.turbine.SpringClusterMonitor 中的收集端点
+  # 我们配置的 Servlet 指向了 /hystrix.stream，Turbine 默认收集端点为 /actuator/hystrix.stream
+  instanceUrlSuffix: /hystrix.stream

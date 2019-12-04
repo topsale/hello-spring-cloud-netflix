@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: discovery-eureka
+  zipkin:
+    base-url: http://10.3.50.121:9411
+
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
