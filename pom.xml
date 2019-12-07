@@ -21,6 +21,7 @@
         <module>business</module>
         <module>addons</module>
         <module>gateway</module>
+        <module>commons</module>
     </modules>
 
     <properties>

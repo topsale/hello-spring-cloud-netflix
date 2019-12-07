@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.funtl.hello.spring.cloud.provider.mapper.TbAdminMapper">
+  <resultMap id="BaseResultMap" type="com.funtl.hello.spring.cloud.provider.domain.TbAdmin">
+    <!--@mbg.generated generated on Sun Dec 08 00:37:34 CST 2019.-->
+    <!--@Table tb_admin-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="sharding_id" jdbcType="INTEGER" property="shardingId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated generated on Sun Dec 08 00:37:34 CST 2019.-->
+    id, `name`, sharding_id
+  </sql>
+</mapper>

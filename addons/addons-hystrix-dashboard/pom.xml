@@ -13,6 +13,7 @@
     <packaging>jar</packaging>
 
     <dependencies>
+        <!-- Spring Cloud -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>

@@ -2,7 +2,7 @@ spring:
   application:
     name: discovery-eureka
   zipkin:
-    base-url: http://10.3.50.121:9411
+    base-url: http://192.168.141.204:9411
 
 server:
   port: 8761

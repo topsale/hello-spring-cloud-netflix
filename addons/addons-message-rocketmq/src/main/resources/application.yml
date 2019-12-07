@@ -4,12 +4,12 @@ spring:
   application:
     name: addons-message-rocketmq
   zipkin:
-    base-url: http://10.3.50.121:9411
+    base-url: http://192.168.141.204:9411
   cloud:
     stream:
       rocketmq:
         binder:
-          name-server: 10.3.50.121:9876
+          name-server: 192.168.141.206:9876
       bindings:
         sync-message-topic: {destination: sync-message-topic, content-type: application/json}
         async-message-topic: {destination: async-message-topic, content-type: application/json}

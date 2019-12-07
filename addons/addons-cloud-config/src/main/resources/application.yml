@@ -8,7 +8,7 @@ spring:
       label: master
       server:
         git:
-          uri: http://gitlab.funtl.com:8080/root/hello-spring-cloud-netflix.git
+          uri: http://192.168.141.204:8080/root/hello-spring-cloud-netflix.git
           search-paths: respo
           username: root
           password: 12345678
