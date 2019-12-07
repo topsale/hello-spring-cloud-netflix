@@ -1,0 +1,40 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: addons-message-rocketmq
+  zipkin:
+    base-url: http://10.3.50.121:9411
+  cloud:
+    stream:
+      rocketmq:
+        binder:
+          name-server: 10.3.50.121:9876
+      bindings:
+        sync-message-topic: {destination: sync-message-topic, content-type: application/json}
+        async-message-topic: {destination: async-message-topic, content-type: application/json}
+        order-message-topic: {destination: order-message-topic, content-type: application/json}
+        batch-message-topic: {destination: batch-message-topic, content-type: application/json}
+        trans-message-topic: {destination: trans-message-topic, content-type: application/json}
+        broadcast-message-topic: {destination: broadcast-message-topic, content-type: application/json}
+
+server:
+  port: 13000
+
+eureka:
+  instance:
+    hostname: localhost
+    metadata-map:
+      cluster: message
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+
+management:
+  endpoint:
+    shutdown:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"

@@ -24,7 +24,7 @@ turbine:
   cluster-name-expression: metadata['cluster']
   aggregator:
     # 指定聚合哪些集群，多个使用 "," 分割，默认为 default
-    cluster-config: business
+    cluster-config: business,message
   # 用于替换源码 org.springframework.cloud.netflix.turbine.SpringClusterMonitor 中的收集端点
   # 我们配置的 Servlet 指向了 /hystrix.stream，Turbine 默认收集端点为 /actuator/hystrix.stream
   instanceUrlSuffix: /hystrix.stream

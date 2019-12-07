@@ -13,8 +13,9 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>addons-cloud-config</module>
         <module>addons-hystrix-dashboard</module>
         <module>addons-hystrix-turbine</module>
-        <module>addons-cloud-config</module>
+        <module>addons-message-rocketmq</module>
     </modules>
 </project>
