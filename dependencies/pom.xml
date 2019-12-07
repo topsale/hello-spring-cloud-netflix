@@ -13,6 +13,7 @@
         <spring-cloud-alibaba.verion>2.1.0.RELEASE</spring-cloud-alibaba.verion>
         <tk.mybatis.version>2.1.5</tk.mybatis.version>
         <fastjson.version>1.2.62</fastjson.version>
+        <redission.version>3.11.5</redission.version>
     </properties>
 
     <dependencyManagement>
@@ -41,6 +42,11 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>${redission.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
