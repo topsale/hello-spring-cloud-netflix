@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.funtl.hello.spring.cloud.provider.mapper.TbItemMapper">
+  <resultMap id="BaseResultMap" type="com.funtl.hello.spring.cloud.provider.domain.TbItem">
+    <!--@mbg.generated generated on Sun Dec 08 20:04:06 CST 2019.-->
+    <!--@Table tb_item-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="num" jdbcType="INTEGER" property="num" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated generated on Sun Dec 08 20:04:06 CST 2019.-->
+    id, `name`, num
+  </sql>
+</mapper>

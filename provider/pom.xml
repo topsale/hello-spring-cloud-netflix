@@ -14,5 +14,6 @@
 
     <modules>
         <module>provider-admin-service</module>
+        <module>provider-item-service</module>
     </modules>
 </project>
