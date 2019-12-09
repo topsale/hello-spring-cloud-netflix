@@ -11,12 +11,7 @@ spring:
         binder:
           name-server: 192.168.141.206:9876
       bindings:
-        sync-message-topic: {destination: sync-message-topic, content-type: application/json}
-        async-message-topic: {destination: async-message-topic, content-type: application/json}
-        order-message-topic: {destination: order-message-topic, content-type: application/json}
-        batch-message-topic: {destination: batch-message-topic, content-type: application/json}
-        trans-message-topic: {destination: trans-message-topic, content-type: application/json}
-        broadcast-message-topic: {destination: broadcast-message-topic, content-type: application/json}
+        MessageTopic: {destination: MessageTopic, content-type: application/json}
 
 server:
   port: 13000
