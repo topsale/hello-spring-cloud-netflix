@@ -12,7 +12,7 @@ public class ProviderAdminController {
 
     @GetMapping(value = "hi")
     public String sayHi() {
-        return "Hello Eureka, i am from port: " + port;
+        return "Hi Eureka, i am from port: " + port;
     }
 
 }

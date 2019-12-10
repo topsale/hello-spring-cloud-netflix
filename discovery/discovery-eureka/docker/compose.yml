@@ -1,0 +1,7 @@
+version: '3.1'
+services:
+  discovery-eureka:
+    image: 192.168.141.204/myapp/discovery-eureka
+    container_name: discovery-eureka
+    ports:
+    - 8761:8761

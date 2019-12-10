@@ -1,0 +1,36 @@
+stages:
+  - build
+  - push
+  - deploy
+  - clean
+
+# 构建阶段
+build:
+  stage: build
+  script:
+    - /usr/local/maven/apache-maven-3.6.1/bin/mvn clean package -Dmaven.test.skip=true
+    - cp provider/provider-admin-service/target/*.jar provider/provider-admin-service/docker
+    - echo 123456 | sudo -S docker build -t 192.168.141.204/myapp/provider-admin -f provider/provider-admin-service/docker/Dockerfile provider/provider-admin-service/docker
+
+# 推送阶段
+push:
+  stage: push
+  script:
+    - echo 123456 | sudo -S docker login 192.168.141.204 -u admin -p Harbor12345
+    - echo 123456 | sudo -S docker push 192.168.141.204/myapp/provider-admin
+
+# 部署阶段
+deploy:
+  stage: deploy
+  script:
+    - echo 123456 | sudo -S docker login 192.168.141.204 -u admin -p Harbor12345
+    - echo 123456 | sudo -S docker pull 192.168.141.204/myapp/provider-admin
+    - echo 123456 | sudo -S docker-compose -f provider/provider-admin-service/docker/compose.yml down
+    - echo 123456 | sudo -S docker-compose -f provider/provider-admin-service/docker/compose.yml up -d
+
+# 清理阶段
+clean:
+  stage: clean
+  script:
+    - echo 123456 | sudo -S docker container prune -f
+    - echo 123456 | sudo -S docker image prune -f

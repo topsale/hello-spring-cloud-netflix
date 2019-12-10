@@ -158,9 +158,30 @@
                 <enabled>true</enabled>
             </snapshots>
         </repository>
+
+        <repository>
+            <id>nexus</id>
+            <name>Nexus Repository</name>
+            <url>http://192.168.141.204:8081/repository/maven-public/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
     </repositories>
 
     <pluginRepositories>
+        <pluginRepository>
+            <id>alimaven</id>
+            <name>aliyun maven</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+
         <pluginRepository>
             <id>spring-milestone</id>
             <name>Spring Milestone</name>
@@ -176,6 +197,18 @@
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
+        </pluginRepository>
+
+        <pluginRepository>
+            <id>nexus</id>
+            <name>Nexus Plugin Repository</name>
+            <url>http://192.168.141.204:8081/repository/maven-public/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
         </pluginRepository>
     </pluginRepositories>
 
